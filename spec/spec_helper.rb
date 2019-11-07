@@ -215,3 +215,6 @@ module Webrat #:nodoc:
   end
 end
 
+  def test_back_to_list
+    response.should have_selector("ul#subtabs>li>a", :content => "Back to list")
+  end

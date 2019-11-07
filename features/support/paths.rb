@@ -24,6 +24,14 @@ module NavigationHelpers
     #   when /^(.*)'s profile page$/i
     #     user_profile_path(User.find_by_login($1))
 
+    when /^the admin dashboard page$/
+      '/admin/'
+    when /^the categories page$/
+      '/admin/categories/new'
+    when /^the edit page for "(.*)"$/
+      category = Category.find_by_name($1)
+      "/admin/categories/edit/#{category_id}"
+
     else
       begin
         page_name =~ /^the (.*) page$/
